@@ -84,8 +84,9 @@ class _HomePageShoesState extends State<HomePageShoes> {
               ),
             ),
           ),
-          Expanded(child: PageView.builder(
-            controller: _pageController,
+          Expanded(child:
+          PageView.builder(
+              controller: _pageController,
               itemCount: listShoes.length,
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context,index){
@@ -109,7 +110,7 @@ class _HomePageShoesState extends State<HomePageShoes> {
                     builder: (context, constraints) {
                       return AnimatedContainer(
                         duration: const Duration(milliseconds: 250),
-                        margin: EdgeInsets.only(top: index == indexPage ? 30.0 :50, bottom: 30),
+                        margin: EdgeInsets.only(top: index == indexPage ? 0.0 :80, bottom: 0),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(36),
                           color:Colors.white

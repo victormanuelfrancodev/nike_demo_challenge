@@ -1,32 +1,28 @@
 import 'package:flutter/material.dart';
 
 class ShakeTransition extends StatelessWidget {
-  const ShakeTransition({
-    Key? key,
-    this.duration = const Duration(milliseconds: 700),
-    required this.child,
-    this.offset= 140.0,
-    this.axis = Axis.horizontal,
-    this.left = true,
-  }) : super(key: key);
+  const ShakeTransition(
+      {Key? key,
+        required this.child,
+        this.duration = const Duration(milliseconds: 900),
+        this.offset = 140,  this.axis=Axis.horizontal})
+      : super(key: key);
 
   final Widget child;
   final Duration duration;
   final double offset;
   final Axis axis;
-  final bool left;
 
   @override
   Widget build(BuildContext context) {
-    return TweenAnimationBuilder(
-        curve: Curves.easeInOut,
-        tween: Tween(begin: 1.0,end: 0.0),
+    return TweenAnimationBuilder<double>(
+        child: child,
+        tween: Tween(begin: 2.0, end: 0.0),
+        curve: Curves.bounceOut,
         duration: duration,
-        builder: (BuildContext context, double value, Widget? child){
+        builder: (context, value, child) {
           return Transform.translate(
-              offset: left?
-              Offset(-value * offset, value * offset)
-                  :Offset(value * offset, -value * -offset),
+            offset:axis==Axis.horizontal? Offset(value * offset, 0):Offset(0, value * offset),
             child: child,
           );
         });
