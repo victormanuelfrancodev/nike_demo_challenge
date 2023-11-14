@@ -12,7 +12,7 @@ class CustomBarApp extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(child: Image.asset('assets/shoes/image.jpg'),width: 30,height: 30,),
+            Container(child: Image.asset('assets/shoes/logo.png'),width: 30,height: 30,),
             Row(
               children: [
                 IconButton(onPressed: (){}, icon: const Icon(Icons.menu, color: Colors.white,)),
