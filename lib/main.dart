@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+import 'package:nike_demo_challenge/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,9 @@ class MyApp extends StatelessWidget {
       title: 'Nike Challenger',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.black,
-        backgroundColor: Colors.white,
+        colorScheme: const ColorScheme.light().copyWith(
+          background: Colors.white,
+        ),
       ),
       home: const HomePageShoes(),
     );
