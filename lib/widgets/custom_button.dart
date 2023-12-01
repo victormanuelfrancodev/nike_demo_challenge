@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key,
+  const CustomButton({
+    required this.child,
+    Key? key,
     this.onTap,
     this.color,
     this.borderRadius,
-    required this.child,
     this.height = 50,
     this.width = 50,
     this.margin,
-    this.padding
+    this.padding,
   }) : super(key: key);
 
   final BorderRadiusGeometry? borderRadius;
@@ -25,7 +26,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: color ?? Colors.white,
-      borderRadius: borderRadius ?? BorderRadius.circular(8.0),
+      borderRadius: borderRadius ?? BorderRadius.circular(8),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: InkWell(
         onTap: onTap,
